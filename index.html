@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta property="og:site_name" content="PITP | Registration Form">
+    <meta property="og:title" content="PITP | Registration Form">
+    <meta property="og:description" content="A Project by Babul @ People's InfoTech Program">
+    <meta property="og:image" content="https://pitpform.vercel.app/live.jpg ">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" sizes="180x180" href="./favicon.png">
+    <title>PITP | Registration Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-md bg-white p-8 md:p-10 rounded-xl shadow-2xl">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Registration Form</h1>
+        <p class="text-sm text-gray-500 mb-8 text-center">This is a fully funtional Form Made by <a href="https://devbabul.vercel.app" target="_blank" class="link">Babul
+                Khan</a></p>
+
+        <form id="registrationForm" class="space-y-6" action="https://formspree.io/f/mvzqvwvj" method="POST">
+            <div>
+                <div class="input-group">
+                    <input type="text" id="name" name="firstName" required placeholder=" "
+                        class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg transition duration-150 ease-in-out">
+                    <label for="name" class="floating-label">Enter your name</label>
+                </div>
+                <p id="nameError" class="text-xs text-red-500 mt-1 hidden"></p>
+            </div>
+
+            <div>
+                <div class="input-group">
+                    <input type="text" id="fatherName" name="lastNname" required placeholder=" "
+                        class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg transition duration-150 ease-in-out">
+                    <label for="fatherName" class="floating-label">Enter your father's name</label>
+                </div>
+                <p id="fatherNameError" class="text-xs text-red-500 mt-1 hidden"></p>
+            </div>
+
+            <div>
+                <div class="input-group">
+                    <input type="text" id="address" name="address" placeholder=" "
+                        class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg transition duration-150 ease-in-out">
+                    <label for="address" class="floating-label">Address (Optional)</label>
+                </div>
+                <p id="addressError" class="text-xs text-red-500 mt-1 hidden"></p>
+            </div>
+
+            <div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder=" "
+                        class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg transition duration-150 ease-in-out">
+                    <label for="email" class="floating-label">Email</label>
+                </div>
+                <p id="emailError" class="text-xs text-red-500 mt-1 hidden"></p>
+            </div>
+
+            <!-- <div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required minlength="3" placeholder=" "
+                        class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg transition duration-150 ease-in-out">
+                    <label for="password" class="floating-label">Enter your password</label>
+                </div>
+                <p id="passwordError" class="text-xs text-red-500 mt-1 hidden"></p>
+            </div>
+            
+            <div>
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" name="confirmPassword" required minlength="3" placeholder=" "
+                        class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg transition duration-150 ease-in-out">
+                    <label for="password" class="floating-label">Confirm your password</label>
+                </div>
+                <p id="passwordError" class="text-xs text-red-500 mt-1 hidden"></p>
+            </div> -->
+
+            <div>
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg shadow-md transition duration-200 ease-in-out transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 mt-4">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        <div id="messageBox" class="mt-6 p-4 rounded-lg hidden" role="alert">
+            <p id="messageText" class="font-medium"></p>
+        </div>
+    </div>
+
+    <script src="script.js">       
+    </script>
+    <script src="contactsubmittor.js"></script>
+</body>
+
+</html>

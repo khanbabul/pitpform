@@ -1,0 +1,84 @@
+/* Custom styles for the requested font and global styling */
+:root {
+    --primary-color: #3b82f6;
+    /* Tailwind blue-500 */
+}
+
+@font-face {
+    font-family: Babul;
+    src: url(./fonts/babul.ttf);
+}
+
+body {
+    /* Using Century Gothic with professional fallbacks */
+    font-family: 'Babul', CenturyGothic, AppleGothic, sans-serif;
+    background-color: #f3f4f6;
+    /* Light gray background */
+}
+
+/* --- Floating Label Styles --- */
+/* Container for relative positioning */
+.input-group {
+    position: relative;
+    margin-top: 1rem;
+    /* Adjust margin to account for floating label space */
+}
+
+/* Input field adjustments */
+.input-field {
+    /* Increased padding top to make space for the floating label */
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.25;
+    min-height: 3.5rem;
+    /* Ensure consistent height */
+    /* Using ' ' (space) as placeholder to trigger :not(:placeholder-shown) selector */
+}
+
+/* Label initial state (inside the input) */
+.floating-label {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    /* Aligns with input padding-left */
+    pointer-events: none;
+    /* Allows clicks to pass through to the input */
+    transition: all 0.2s ease;
+    transform-origin: 0 0;
+    font-size: 0.875rem;
+    /* text-sm */
+    color: #6b7280;
+    /* text-gray-500 */
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 2rem);
+    /* Initial translation: moves label down into the center of the input area */
+    transform: translateY(1.25rem);
+}
+
+/* Floating effect when input is focused or already filled */
+.input-field:focus+.floating-label,
+.input-field:not(:placeholder-shown)+.floating-label {
+    transform: translateY(0.5rem) scale(0.75);
+    /* Move up and shrink */
+    color: var(--primary-color);
+    /* Highlight color */
+}
+
+/* Custom focus state (retained) */
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.link{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.link:hover{
+    text-decoration: wavy underline;
+}
